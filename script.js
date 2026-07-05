@@ -40,62 +40,62 @@ const projects = [
     },
 
     colors: ["#0f766e", "#172033"]
-  },
-  {
-    title: "Task Manager App",
-    image: "",
-    gallery: [],
-    description: "A practical app for tracking tasks, filtering status, and keeping project work organized.",
-    tags: ["React", "Local Storage", "UI"],
-    repo: "https://github.com/",
-    demo: "https://github.com/",
-    details: null,
-    colors: ["#e2553f", "#7f1d1d"]
-  },
-  {
-    title: "Weather Dashboard",
-    image: "",
-    gallery: [],
-    description: "A clean dashboard for displaying weather data, search history, and responsive forecast cards.",
-    tags: ["API", "JavaScript", "CSS Grid"],
-    repo: "https://github.com/",
-    demo: "https://github.com/",
-    details: null,
-    colors: ["#2563eb", "#0f766e"]
-  },
-  {
-    title: "E-commerce UI",
-    image: "",
-    gallery: [],
-    description: "Product listing, cart states, and checkout-focused layouts designed for fast browsing.",
-    tags: ["Frontend", "Components", "Responsive"],
-    repo: "https://github.com/",
-    demo: "https://github.com/",
-    details: null,
-    colors: ["#4f46e5", "#be123c"]
-  },
-  {
-    title: "Blog Platform",
-    image: "",
-    gallery: [],
-    description: "A content-focused project with article pages, tags, and readable typography.",
-    tags: ["CMS", "Markdown", "Layout"],
-    repo: "https://github.com/",
-    demo: "https://github.com/",
-    details: null,
-    colors: ["#475569", "#0f766e"]
-  },
-  {
-    title: "API Practice Repo",
-    image: "",
-    gallery: [],
-    description: "Backend exercises covering routes, controllers, validation, and database-ready structure.",
-    tags: ["Node.js", "Express", "REST"],
-    repo: "https://github.com/",
-    demo: "https://github.com/",
-    details: null,
-    colors: ["#15803d", "#365314"]
   }
+  // {
+  //   title: "Task Manager App",
+  //   image: "",
+  //   gallery: [],
+  //   description: "A practical app for tracking tasks, filtering status, and keeping project work organized.",
+  //   tags: ["React", "Local Storage", "UI"],
+  //   repo: "https://github.com/",
+  //   demo: "https://github.com/",
+  //   details: null,
+  //   colors: ["#e2553f", "#7f1d1d"]
+  // },
+  // {
+  //   title: "Weather Dashboard",
+  //   image: "",
+  //   gallery: [],
+  //   description: "A clean dashboard for displaying weather data, search history, and responsive forecast cards.",
+  //   tags: ["API", "JavaScript", "CSS Grid"],
+  //   repo: "https://github.com/",
+  //   demo: "https://github.com/",
+  //   details: null,
+  //   colors: ["#2563eb", "#0f766e"]
+  // },
+  // {
+  //   title: "E-commerce UI",
+  //   image: "",
+  //   gallery: [],
+  //   description: "Product listing, cart states, and checkout-focused layouts designed for fast browsing.",
+  //   tags: ["Frontend", "Components", "Responsive"],
+  //   repo: "https://github.com/",
+  //   demo: "https://github.com/",
+  //   details: null,
+  //   colors: ["#4f46e5", "#be123c"]
+  // },
+  // {
+  //   title: "Blog Platform",
+  //   image: "",
+  //   gallery: [],
+  //   description: "A content-focused project with article pages, tags, and readable typography.",
+  //   tags: ["CMS", "Markdown", "Layout"],
+  //   repo: "https://github.com/",
+  //   demo: "https://github.com/",
+  //   details: null,
+  //   colors: ["#475569", "#0f766e"]
+  // },
+  // {
+  //   title: "API Practice Repo",
+  //   image: "",
+  //   gallery: [],
+  //   description: "Backend exercises covering routes, controllers, validation, and database-ready structure.",
+  //   tags: ["Node.js", "Express", "REST"],
+  //   repo: "https://github.com/",
+  //   demo: "https://github.com/",
+  //   details: null,
+  //   colors: ["#15803d", "#365314"]
+  // }
 ];
 
 const certifications = [
