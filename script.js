@@ -22,8 +22,13 @@ const projects = [
         // "Second paragraph if you want."
       ],
       photos: [
-        { src: "images/Still there/sign up page.png"},
-        { src: "images/Still there/Login Page.png",}
+        { src: "images/Still there/image0.jpeg"},
+        { src: "images/Still there/image1.jpeg",},
+        { src: "images/Still there/image2.jpeg",},
+        { src: "images/Still there/image4.jpeg",},
+        {src: "images/Still there/image5.jpeg",}
+
+
       ],
       livePrototype: "https://lo-di-cvevp.vercel.app",
       figmaPrototype: "https://www.figma.com/site/6Rl4mPwoYfOjHExcmRVWIq/still-there-prototype?node-id=0-1&t=Izq7ukeq2S6Jomem-1",
@@ -36,7 +41,7 @@ const projects = [
         title: "Best Machine Learning Model",
         subtitle: "CCIS Innovision 2026"
       },
-      reflection: "Write your reflection here."
+      reflection: "Winning the Best Machine Learning Model award for \"Still There?\" is a milestone that I will always be grateful for. Looking back, I realize how much time, patience, and effort our team invested, from collecting data and improving the model to debugging, testing, and continuously refining the system. There were many challenges along the way, but every setback pushed us to learn and improve. This recognition is more than just an award; it reminds me that consistency, teamwork, and perseverance truly pay off. As a computer science student, this experience has inspired me to keep learning, exploring machine learning and AI, and building solutions that can create a meaningful impact."
     },
 
     colors: ["#0f766e", "#172033"]
