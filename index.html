@@ -1,6 +1,207 @@
 <!DOCTYPE html>
-<html>
-<head><title>Blank Page</title></head>
-<body></body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="animated-bg" aria-hidden="true">
+    <img class="planet planet-main" src="images/death-star.png" alt="" loading="eager" />
+    <img class="planet planet-small bb8-droid" src="images/bb8.gif" alt="" loading="eager" />
+    <span class="hyperspace-line line-one"></span>
+    <span class="hyperspace-line line-two"></span>
+    <span class="blaster blaster-one"></span>
+    <span class="blaster blaster-two"></span>
+    <!-- <img class="featured-fighter" src="images/x-wing-fighters.png" alt="" loading="eager" /> -->
+    <img class="capital-ship" src="images/capital-ship.png" alt="" loading="eager" />
+    <!-- <img class="diagonal-fighter" src="images/diagonal-fighter.png" alt="" loading="eager" /> -->
+    <img class="destroyer-ship" src="images/star-destroyer.png" alt="" loading="eager" />
+    <!-- <span class="starship ship-one"></span> -->
+    <span class="starship ship-two"></span>
+    <div class="saber-duel">
+      <span class="saber saber-blue"></span>
+      <span class="saber saber-red"></span>
+    </div>
+  </div>
 
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-mark">SL</span>
+        <span>Your GitHub Portfolio</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="section hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Developer Portfolio</p>
+        <h1>Building clean, useful projects from idea to launch.</h1>
+        <p class="lead">
+          A responsive GitHub portfolio for showcasing projects, certifications, and contact links with a polished
+          light and dark mode experience.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noreferrer">GitHub Profile</a>
+        </div>
+      </div>
+
+      <div class="hero-visual tetris-visual reveal" aria-label="Playable Tetris game">
+        <div class="tetris-shell">
+          <div class="tetris-board-wrap">
+            <canvas id="tetrisBoard" class="tetris-board" width="240" height="480" aria-label="Tetris board"></canvas>
+            <div class="tetris-overlay" id="tetrisOverlay">Press Start</div>
+          </div>
+          <aside class="tetris-panel" aria-label="Tetris status">
+            <div class="tetris-readout">
+              <span>Score</span>
+              <strong id="tetrisScore">0</strong>
+            </div>
+            <div class="tetris-readout">
+              <span>Lines</span>
+              <strong id="tetrisLines">0</strong>
+            </div>
+            <div class="tetris-readout">
+              <span>Level</span>
+              <strong id="tetrisLevel">1</strong>
+            </div>
+            <div class="tetris-next">
+              <span>Next</span>
+              <canvas id="tetrisNext" width="96" height="96" aria-label="Next Tetris piece"></canvas>
+            </div>
+            <button class="tetris-start" id="tetrisStart" type="button">Start</button>
+          </aside>
+        </div>
+        <div class="tetris-controls" aria-label="Tetris touch controls">
+          <button type="button" data-tetris-action="left" aria-label="Move left"><i class="fa-solid fa-arrow-left"></i></button>
+          <button type="button" data-tetris-action="rotate" aria-label="Rotate"><i class="fa-solid fa-rotate-right"></i></button>
+          <button type="button" data-tetris-action="right" aria-label="Move right"><i class="fa-solid fa-arrow-right"></i></button>
+          <button type="button" data-tetris-action="swap" aria-label="Swap current and next piece"><i class="fa-solid fa-repeat"></i></button>
+          <button type="button" data-tetris-action="drop" aria-label="Hard drop"><i class="fa-solid fa-angles-down"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading reveal">
+        <h2>Projects</h2>
+        <p>Projects are displayed in order. Edit the project list in <code>script.js</code> to add your real repositories.</p>
+      </div>
+      <div class="projects-grid" id="projectsGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section" id="certifications">
+      <div class="section-heading reveal">
+        <h2>Certifications</h2>
+        <p>Certifications are also ordered, so you can place your newest or most important credentials first.</p>
+      </div>
+      <div class="certification-list" id="certificationList" aria-live="polite"></div>
+    </section>
+
+    <section class="section about-band" id="about">
+      <div class="panel reveal">
+        <p class="eyebrow">About</p>
+        <h2>Replace this with your story.</h2>
+        <p>
+          Add a short paragraph about who you are, what you build, and the kind of work you want to do. Keep it
+          specific: your stack, your strengths, and the problems you enjoy solving.
+        </p>
+      </div>
+      <div class="panel reveal">
+        <p class="eyebrow">Skills</p>
+        <ul class="skills">
+          <li>HTML / CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Git / GitHub</li>
+          <li>Responsive UI</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section contact reveal" id="contact">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's build something clear and useful.</h2>
+      <p>Update these links with your email, GitHub, LinkedIn, and resume so visitors can reach you fast.</p>
+      <div class="actions centered">
+        <a class="btn btn-primary contact-btn" href="mailto:you@example.com">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <span>Email Me</span>
+        </a>
+        <a class="btn btn-secondary contact-btn" href="https://github.com/" target="_blank" rel="noreferrer">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <span>GitHub</span>
+        </a>
+        <a class="btn btn-secondary contact-btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a class="btn btn-secondary contact-btn" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          <span>Instagram</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="projectLightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close gallery">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="Previous photo">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <figure class="lightbox-figure">
+        <img id="lightboxImage" src="" alt="" />
+        <figcaption>
+          <span id="lightboxTitle"></span>
+          <span id="lightboxCounter"></span>
+        </figcaption>
+      </figure>
+      <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="Next photo">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="details-modal" id="projectDetailsModal" aria-hidden="true">
+    <div class="details-backdrop" data-details-close></div>
+    <article class="details-dialog" role="dialog" aria-modal="true" aria-labelledby="detailsTitle">
+      <button class="details-close" type="button" data-details-close aria-label="Close project details">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <div class="details-content" id="projectDetailsContent"></div>
+    </article>
+  </div>
+
+  <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="sun-icon" aria-hidden="true"></span>
+    <span class="moon-icon" aria-hidden="true"></span>
+    <img class="toggle-gif toggle-gif-dark" src="images/vader-toggle.gif" alt="" aria-hidden="true" />
+    <img class="toggle-gif toggle-gif-light" src="images/obi-toggle.gif" alt="" aria-hidden="true" />
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
