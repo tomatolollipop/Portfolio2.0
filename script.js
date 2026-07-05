@@ -3,36 +3,36 @@
 // Add details: null to hide the View Details button for a project.
 const projects = [
   {
-    title: "Portfolio Website",
-    image: "images/star-destroyer.png",
+    title: "Still There?",
+    image: "images/Still there/sign up page.png",
     gallery: [
-      "images/star-destroyer.png",
-      "images/star-diagonal-fighter.png",
+      "images/Still there/sign up page.png",
+      "images/Still there/Login Page.png",
       "images/capital-ship.png"
     ],
     description: "A responsive personal website with theme switching, animated sections, and project cards.",
     tags: ["HTML", "CSS", "JavaScript"],
-    repo: "https://github.com/",
-    demo: "https://github.com/",
+    repo: "https://github.com/cybot555/LODi-cvevp",
+    demo: "https://lo-di-cvevp.vercel.app",
 
     details: {
-      meta: "Group Project - Team Name",
+      meta: "Group Project - Team LODi(Leyson, Orcasitas, Digal)",
       description: [
-        "First paragraph about the project.",
-        "Second paragraph if you want."
+        '"Still There?" is a web application created by team LODi, with members of Seth Leyson, Cyrus Digal, and Franz Orcasitas. The web application\'s main purpose is to track attendance and student engagement through the use of Computer Vision and camera to check one\'s engagement and attendance. This eases the manual tracking the attendance of the students under a certain section in each session, while also checking the engagement of the students without direct contact with them. This allows the user to have insights about the student\'s attendance and engagement performance, and find the areas on how to improve the class\' way of keep engagement going, which may affect the academic performance of the student. The main users of this project are instructors/teachers and administrators but the secondary users are the students.',
+        // "Second paragraph if you want."
       ],
       photos: [
-        { src: "images/project-photo-1.png", caption: "Presentation photo" },
-        { src: "images/project-photo-2.png", caption: "Team demo" }
+        { src: "images/Still there/sign up page.png"},
+        { src: "images/Still there/Login Page.png",}
       ],
-      livePrototype: "https://your-live-prototype-link.com",
-      figmaPrototype: "https://your-figma-link.com",
+      livePrototype: "https://lo-di-cvevp.vercel.app",
+      figmaPrototype: "https://www.figma.com/site/6Rl4mPwoYfOjHExcmRVWIq/still-there-prototype?node-id=0-1&t=Izq7ukeq2S6Jomem-1",
       screenshots: [
-        { src: "images/login-page.png", caption: "Login Page" },
-        { src: "images/dashboard.png", caption: "Dashboard Page" }
+        { src: "images/Still there/sign up page.png", caption: "Sign Up Page" },
+        { src: "images/Still there/Login Page.png", caption: "Login Page" }
       ],
       award: {
-        image: "images/award-certificate.png",
+        image: "images/Still there/Still There.jpg",
         title: "Best Machine Learning Model",
         subtitle: "CCIS Innovision 2026"
       },
@@ -630,9 +630,11 @@ function getProjectDetails(project) {
 
 function renderLightboxImage() {
   const image = activeGallery[activeGalleryIndex];
-  lightboxImage.src = image;
-  lightboxImage.alt = `${activeGalleryTitle} photo ${activeGalleryIndex + 1}`;
-  lightboxTitle.textContent = activeGalleryTitle;
+  const imageSrc = typeof image === "string" ? image : image.src;
+  const imageCaption = typeof image === "string" ? "" : image.caption;
+  lightboxImage.src = imageSrc;
+  lightboxImage.alt = imageCaption || `${activeGalleryTitle} photo ${activeGalleryIndex + 1}`;
+  lightboxTitle.textContent = imageCaption || activeGalleryTitle;
   lightboxCounter.textContent = `${activeGalleryIndex + 1} / ${activeGallery.length}`;
   const hasMultiplePhotos = activeGallery.length > 1;
   lightboxPrev.disabled = !hasMultiplePhotos;
@@ -792,9 +794,9 @@ function openDetailsImageGallery(galleryName, imageIndex) {
   const project = projects[Number(projectDetailsModal.dataset.projectIndex)];
   const details = getProjectDetails(project);
   const galleries = {
-    photos: normalizeImageItems(details.photos).map((image) => image.src),
-    screenshots: normalizeImageItems(details.screenshots).map((image) => image.src),
-    award: details.award?.image ? [details.award.image] : []
+    photos: normalizeImageItems(details.photos),
+    screenshots: normalizeImageItems(details.screenshots),
+    award: details.award?.image ? [{ src: details.award.image, caption: details.award.title || "Award Received" }] : []
   };
 
   openImageGallery(galleries[galleryName] || [], details.title || project.title, imageIndex);
