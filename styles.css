@@ -1405,7 +1405,14 @@ body.lightbox-open {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
   overflow: hidden;
+}
+
+button.certification-preview {
+  padding: 0;
+  font: inherit;
 }
 
 .certification-preview img {
@@ -1915,6 +1922,7 @@ body.lightbox-open {
   .certification-card {
     grid-template-columns: 1fr;
     align-items: start;
+    cursor: pointer;
   }
 
   .certification-preview {

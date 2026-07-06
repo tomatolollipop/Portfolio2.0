@@ -10,8 +10,8 @@ const projects = [
       "images/Still there/Login Page.png",
       "images/capital-ship.png"
     ],
-    description: "A responsive personal website with theme switching, animated sections, and project cards.",
-    tags: ["HTML", "CSS", "JavaScript"],
+    description: "Web based AI-powered classroom attendance and engagement monitoring system using computer vision and facial recognition.",
+    tags: ["Python", "Next.js", "Computer Vision", "Facial Recognition", "Machine Learning", "Supabase"],
     repo: "https://github.com/cybot555/LODi-cvevp",
     demo: "https://lo-di-cvevp.vercel.app",
 
@@ -32,10 +32,10 @@ const projects = [
       ],
       livePrototype: "https://lo-di-cvevp.vercel.app",
       figmaPrototype: "https://www.figma.com/site/6Rl4mPwoYfOjHExcmRVWIq/still-there-prototype?node-id=0-1&t=Izq7ukeq2S6Jomem-1",
-      screenshots: [
-        { src: "images/Still there/sign up page.png", caption: "Sign Up Page" },
-        { src: "images/Still there/Login Page.png", caption: "Login Page" }
-      ],
+      screenshots: [ "" //putting " " will hide the screenshots section if you don't want to add any
+        // { src: "images/Still there/sign up page.png", caption: "Sign Up Page" },
+        // { src: "images/Still there/Login Page.png", caption: "Login Page" }
+        ],
       award: {
         image: "images/Still there/Still There.jpg",
         title: "Best Machine Learning Model",
@@ -45,29 +45,36 @@ const projects = [
     },
 
     colors: ["#0f766e", "#172033"]
+  },
+  {
+    title: "PawsConnectDavao",
+    image: "images/PawsConnect.png",
+    gallery: [],
+    description: "A community-driven platform designed to improve stray animal rescue through real-time reporting, location tracking, and collaboration with rescue organizations.",
+    tags: ["React", "Next.js", "Tailwind CSS", "Firebase"],
+    repo: "https://github.com/tomatolollipop/pawsconnect-davao",
+    demo: "https://pawsconnnectdavao-zs6b.vercel.app/",
+    details: null,
+    colors: ["#e2553f", "#7f1d1d"]
+  },
+  {
+    title: "Evson Hardware",
+    image: "images/Evson Hardware/Home Menu.png",
+    gallery: [
+      "images/Evson Hardware/Home Menu.png",
+      "images/Evson Hardware/Inventory Manager.png",
+      "images/Evson Hardware/Expenses.png",
+      "images/Evson Hardware/Log in Menu.png",
+      "images/Evson Hardware/Point of sales (product search).png",
+      "images/Evson Hardware/Return_Refund_Exchange.png"
+    ],
+    description: "A full-stack inventory and sales management system developed for Evson Hardware that digitizes inventory tracking, sales transactions, expense management, and business reporting to improve operational efficiency and reduce manual record-keeping.",
+    tags: ["JavaScript", "C#", "BootStrap", "XAMPP"],
+    repo: "https://github.com/tomatolollipop/Evson-Hardware",
+    demo: "",
+    details: null,
+    colors: ["#2563eb", "#0f766e"]
   }
-  // {
-  //   title: "Task Manager App",
-  //   image: "",
-  //   gallery: [],
-  //   description: "A practical app for tracking tasks, filtering status, and keeping project work organized.",
-  //   tags: ["React", "Local Storage", "UI"],
-  //   repo: "https://github.com/",
-  //   demo: "https://github.com/",
-  //   details: null,
-  //   colors: ["#e2553f", "#7f1d1d"]
-  // },
-  // {
-  //   title: "Weather Dashboard",
-  //   image: "",
-  //   gallery: [],
-  //   description: "A clean dashboard for displaying weather data, search history, and responsive forecast cards.",
-  //   tags: ["API", "JavaScript", "CSS Grid"],
-  //   repo: "https://github.com/",
-  //   demo: "https://github.com/",
-  //   details: null,
-  //   colors: ["#2563eb", "#0f766e"]
-  // },
   // {
   //   title: "E-commerce UI",
   //   image: "",
@@ -105,25 +112,28 @@ const projects = [
 
 const certifications = [
   {
-    title: "Responsive Web Design",
-    issuer: "freeCodeCamp",
-    date: "2026",
-    image: "",
-    credential: "https://www.freecodecamp.org/"
+    title: "CCIS Innovision 2026 Certificate of Participation",
+    issuer:"CCIS",
+    date: "June 20, 2026",
+    image: "images/Leyson.jpg",
+    gallery: [],
+    credential: ""
+  },
+    {
+    title: "Introduction to User Experience Design",
+    issuer: "Coursera",
+    date: "May 26, 2026",
+    image: "images/Coursera - Intro to User Experience Design.png",
+    gallery: [],
+    credential: "https://coursera.org/share/357d8ff1ed52cafd70bb7b4c477487bf"
   },
   {
-    title: "JavaScript Algorithms and Data Structures",
-    issuer: "freeCodeCamp",
-    date: "2026",
-    image: "",
-    credential: "https://www.freecodecamp.org/"
-  },
-  {
-    title: "Git and GitHub Foundations",
-    issuer: "GitHub",
-    date: "2026",
-    image: "",
-    credential: "https://github.com/"
+    title: "Input and Interaction",
+    issuer: "Coursera",
+    date: "July 16, 2025",
+    image: "images/Coursera- Input and Interaction.png",
+    gallery: [],
+    credential: "https://www.coursera.org/account/accomplishments/verify/SEKMLY7B4GD6"
   }
 ];
 
@@ -599,6 +609,14 @@ function getProjectGallery(project) {
   return project.image ? [project.image] : [];
 }
 
+function getCertificationGallery(certification) {
+  if (Array.isArray(certification.gallery) && certification.gallery.length > 0) {
+    return normalizeImageItems(certification.gallery);
+  }
+
+  return certification.image ? [{ src: certification.image, caption: certification.title }] : [];
+}
+
 function escapeHtml(value = "") {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -895,20 +913,49 @@ if (projectDetailsModal) {
   });
 }
 
-certificationList.innerHTML = certifications.map((certification, index) => `
-  <article class="certification-card reveal" style="transition-delay: ${index * 60}ms;">
-    <a class="certification-preview" href="${certification.credential}" target="_blank" rel="noreferrer" aria-label="Open ${certification.title} credential">
-      ${certification.image
-        ? `<img src="${certification.image}" alt="${certification.title} certificate" loading="lazy">`
-        : `<span class="certification-number">${String(index + 1).padStart(2, "0")}</span>`}
-    </a>
-    <div>
-      <h3>${certification.title}</h3>
-      <p>${certification.issuer}</p>
-    </div>
-    <a class="certification-date" href="${certification.credential}" target="_blank" rel="noreferrer">${certification.date}</a>
-  </article>
-`).join("");
+certificationList.innerHTML = certifications.map((certification, index) => {
+  const certificationGallery = getCertificationGallery(certification);
+  const previewImage = certification.image || certificationGallery[0]?.src;
+  const previewContent = previewImage
+    ? `<img src="${escapeHtml(previewImage)}" alt="${escapeHtml(certification.title)} certificate" loading="lazy">`
+    : `<span class="certification-number">${String(index + 1).padStart(2, "0")}</span>`;
+  const previewElement = certificationGallery.length
+    ? `<button class="certification-preview" type="button" data-certification-gallery-index="${index}" aria-label="Open ${escapeHtml(certification.title)} certificate photo">
+        ${previewContent}
+      </button>`
+    : certification.credential
+      ? `<a class="certification-preview" href="${escapeHtml(certification.credential)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(certification.title)} credential">
+          ${previewContent}
+        </a>`
+      : `<div class="certification-preview" aria-label="${escapeHtml(certification.title)} certificate preview">
+          ${previewContent}
+        </div>`;
+  const dateElement = certification.credential
+    ? `<a class="certification-date" href="${escapeHtml(certification.credential)}" target="_blank" rel="noreferrer">${escapeHtml(certification.date)}</a>`
+    : `<span class="certification-date">${escapeHtml(certification.date)}</span>`;
+
+  return `
+    <article class="certification-card reveal" style="transition-delay: ${index * 60}ms;"
+    ${certification.credential ? `onclick="window.open('${escapeHtml(certification.credential)}', '_blank', 'noreferrer')"` : ""}
+    >
+      ${previewElement}
+      <div>
+        <h3>${escapeHtml(certification.title)}</h3>
+        <p>${escapeHtml(certification.issuer)}</p>
+      </div>
+      ${dateElement}
+    </article>
+  `;
+}).join("");
+
+document.querySelectorAll("[data-certification-gallery-index]").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.stopPropagation();
+    
+    const certification = certifications[Number(button.dataset.certificationGalleryIndex)];
+    openImageGallery(getCertificationGallery(certification), certification.title);
+  });
+});
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
